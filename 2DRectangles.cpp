@@ -21,7 +21,7 @@ Rectangle::Rectangle(Point2d _point, float _width, float _height)
 }
 
 
-Rectangle::Rectangle(Rectangle& rec)
+Rectangle::Rectangle(const Rectangle& rec)
 {
     bottom_left = rec.get_bottom_l();
     bottom_right = rec.get_bottom_r();
@@ -68,6 +68,20 @@ bool Rectangle::is_intersected(Rectangle rec)
     return is_to_right(rec) && is_below(rec); 
 
 }
+
+Rectangle& Rectangle::operator =(const Rectangle& rec)
+{
+    bottom_left = rec.get_bottom_l();
+    bottom_right = rec.get_bottom_r();
+    top_left = rec.get_top_l();
+    top_right = rec.get_top_r();
+    height = rec.get_height();
+    width = rec.get_width();
+    area = rec.get_area();
+    return *this;
+
+}
+
 
 
 std::ostream& operator<<(std::ostream& os, const Rectangle& rec)

@@ -1,6 +1,6 @@
 #include "Point2d.h"
 
-Point2d::Point2d(Point2d& P)
+Point2d::Point2d(const Point2d& P)
 {
     x = P.get_x();
     y = P.get_y();

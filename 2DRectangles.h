@@ -35,19 +35,19 @@ class Rectangle
         ~Rectangle()=default;
 
         /*getters*/
-        Point2d get_bottom_l()  {return bottom_left;};
-        Point2d get_bottom_r()  {return bottom_right;};
-        Point2d get_top_l()   {return top_left;};
-        Point2d get_top_r()  {return top_right;};
+        Point2d get_bottom_l() const {return bottom_left;};
+        Point2d get_bottom_r() const {return bottom_right;};
+        Point2d get_top_l() const {return top_left;};
+        Point2d get_top_r() const {return top_right;};
         float get_height() const {return height;};
         float get_width() const {return width;};
         double get_area() const { return area;};
 
         /*copy constuctor*/
-        Rectangle(Rectangle& rec);
+        Rectangle(const Rectangle& rec);
 
         /*Assignment operators*/
-        bool operator = (const Rectangle& rec) const;
+        Rectangle& operator = (const Rectangle& rec);
         friend std::ostream& operator << (std::ostream& os, const Rectangle& rec);
 
         

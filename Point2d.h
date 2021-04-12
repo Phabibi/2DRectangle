@@ -8,11 +8,11 @@ class Point2d
         Point2d(){x = 0.0; y = 0.0;};
         
         /*consturctor for an axis-aligned rectangle*/
-        Point2d(float _x, float _y){x = _x; y = _y;};
+        Point2d(const float _x, const float _y){x = _x; y = _y;};
         ~Point2d() = default;
 
         /*copy constuctor*/
-        Point2d(Point2d &P);
+        Point2d(const Point2d &P);
 
         
         /*getters*/
