@@ -50,7 +50,7 @@ int main(){
 
 
     std::cout << "====================test 3=========================" << std::endl;
-    Point2d p_test_2(2.0,2.0);
+    Point2d p_test_2(-2.0,-2.0);
     Rectangle rec2(p_test_2,40.0,40.0);
 
     try{

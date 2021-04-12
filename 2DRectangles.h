@@ -28,8 +28,11 @@ class Rectangle
 {
     public:
         
-        /*consturctor for an axis-aligned rectangle given a point, width and height*/
-        Rectangle(Point2d _point, float _width, float _height);
+        /*consturctor for an axis-aligned rectangle given the coordinates bottom_left_corner, width and height*/
+        Rectangle(const Point2d& bottom_l, float _width, float _height);
+
+        /*constructor for an axis-aligned rectangle given 2 points (bottom_left , top_right) */
+        Rectangle(const Point2d& bottom_l, const Point2d& top_r);
 
         /*default destructor*/
         ~Rectangle()=default;
@@ -44,24 +47,23 @@ class Rectangle
         double get_area() const { return area;};
 
         /*copy constuctor*/
-        Rectangle(const Rectangle& rec);
+        Rectangle(Rectangle& rec);
 
         /*Assignment operators*/
         Rectangle& operator = (const Rectangle& rec);
-        friend std::ostream& operator << (std::ostream& os, const Rectangle& rec);
 
         
         /*checks to see if a rectangle is located  to the right of our rectangle*/
-        bool is_to_right(Rectangle rec);
+        bool is_to_right(const Rectangle& rec) const;
 
         /*checks to see if a rectangle is located below our rectangle*/
-        bool is_below(Rectangle rec) ;
+        bool is_below(const Rectangle& rec) const;
 
         /* Algorithm that checks whether or not a 2D point is contained in an axis-aligned Rectangle*/
-        bool is_contained(const Point2d point) ;
+        bool is_contained(const Point2d& point) const;
 
        /* Algorithm that checks whether or not two axis-aligned Rectangles intersect */
-       bool is_intersected(Rectangle rec);  
+       bool is_intersected(const Rectangle& rec) const; 
 
     private: 
         /*bottom left corner point (starting)*/
@@ -84,5 +86,5 @@ class Rectangle
 
 
 };
-
+std::ostream& operator << (std::ostream& os, const Rectangle& rec);
 

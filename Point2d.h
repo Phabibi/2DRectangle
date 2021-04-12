@@ -23,15 +23,11 @@ class Point2d
         void set_x(float _x) {x = _x;};
         void set_y(float _y) {y = _y;};
 
-        /*helpers*/
-
-        bool is_x_axis_aligned(const Point2d p2) const;
-        bool is_y_axis_aligned(const Point2d p2) const;
-
 
     private: 
         float x;
         float y;
         
 };
+
 std::ostream& operator << (std::ostream& os, const Point2d& p);
